@@ -3,7 +3,7 @@
 import { createClient } from '@/lib/supabase/client'
 import { useRouter } from 'next/navigation'
 import type { Profile } from '@/types'
-import { LogOut, LayoutDashboard } from 'lucide-react'
+import { LogOut, LayoutDashboard, BarChart3 } from 'lucide-react'
 
 interface NavbarProps {
   profile: Profile | null
@@ -35,10 +35,17 @@ export default function Navbar({ profile }: NavbarProps) {
       <nav className="hidden md:flex items-center gap-1">
         <a
           href="/dashboard"
-          className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium text-violet-700 dark:text-violet-400 bg-violet-50 dark:bg-violet-900/20"
+          className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-zinc-800 transition-colors"
         >
           <LayoutDashboard size={15} />
           Pipeline
+        </a>
+        <a
+          href="/dashboard/analytics"
+          className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-zinc-800 transition-colors"
+        >
+          <BarChart3 size={15} />
+          Analytics
         </a>
       </nav>
 
