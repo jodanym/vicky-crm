@@ -231,7 +231,8 @@ export default function LeadDetailModal({ lead, profile, onClose, onUpdated, onD
                 <button onClick={() => setEditMode(false)} className="flex-1 py-2 border border-gray-300 dark:border-zinc-600 text-gray-700 dark:text-gray-300 rounded-lg text-sm font-medium hover:bg-gray-50 dark:hover:bg-zinc-800 transition-colors">
                   Cancelar
                 </button>
-                <button onClick={handleSave} disabled={loading} className="flex-1 py-2 bg-violet-600 hover:bg-violet-700 disabled:bg-violet-400 text-white rounded-lg text-sm font-medium transition-colors">
+                <button onClick={handleSave} disabled={loading} className="flex-1 py-2 text-white rounded-lg text-sm font-medium transition-all hover:opacity-90 disabled:opacity-60"
+                  style={{ background: 'var(--brand)' }}>
                   {loading ? 'Guardando…' : 'Guardar cambios'}
                 </button>
               </div>
@@ -253,7 +254,8 @@ export default function LeadDetailModal({ lead, profile, onClose, onUpdated, onD
                 <button
                   onClick={handleAddNote}
                   disabled={addingNote || !newNote.trim()}
-                  className="px-3 py-2 bg-violet-600 hover:bg-violet-700 disabled:bg-violet-400 text-white rounded-lg text-sm transition-colors"
+                  className="px-3 py-2 text-white rounded-lg text-sm transition-all hover:opacity-90 disabled:opacity-60"
+                  style={{ background: 'var(--brand)' }}
                 >
                   <Plus size={16} />
                 </button>

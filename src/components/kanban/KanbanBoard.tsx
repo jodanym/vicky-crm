@@ -199,7 +199,8 @@ export default function KanbanBoard({ initialLeads, profile, specialists = [] }:
 
         <button
           onClick={() => setShowAddModal(true)}
-          className="flex items-center gap-1.5 px-4 py-2 bg-violet-600 hover:bg-violet-700 text-white rounded-lg text-sm font-medium transition-colors shadow-sm ml-auto"
+          className="flex items-center gap-1.5 px-4 py-2 text-white rounded-lg text-sm font-medium transition-all shadow-sm ml-auto hover:opacity-90"
+          style={{ background: 'var(--brand)' }}
         >
           <Plus size={16} />
           Nuevo lead

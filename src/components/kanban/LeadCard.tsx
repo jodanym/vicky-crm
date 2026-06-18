@@ -25,15 +25,17 @@ export default function LeadCard({ lead, isDragging = false, onClick }: Props) {
     <div
       onClick={() => onClick(lead)}
       className={`
-        bg-white dark:bg-zinc-800 rounded-lg p-3 shadow-sm border border-gray-200 dark:border-zinc-700
-        cursor-pointer hover:shadow-md hover:border-violet-300 dark:hover:border-violet-600 transition-all
-        ${isDragging ? 'shadow-xl rotate-1 scale-105' : ''}
+        bg-white dark:bg-zinc-800 rounded-lg p-3 shadow-sm border cursor-pointer transition-all group
+        ${isDragging ? 'shadow-xl rotate-1 scale-105 border-gray-200 dark:border-zinc-700' : 'border-gray-200 dark:border-zinc-700 hover:shadow-md'}
       `}
+      style={!isDragging ? { borderColor: undefined } : undefined}
+      onMouseEnter={e => { if (!isDragging) (e.currentTarget as HTMLDivElement).style.borderColor = 'var(--brand)' }}
+      onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.borderColor = '' }}
     >
       {/* Name + avatar */}
       <div className="flex items-start gap-2 mb-2">
-        <div className="w-8 h-8 rounded-full bg-violet-100 dark:bg-violet-900 flex items-center justify-center flex-shrink-0">
-          <span className="text-violet-700 dark:text-violet-300 text-xs font-semibold">
+        <div className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: 'var(--brand-light)' }}>
+          <span className="text-xs font-semibold" style={{ color: 'var(--brand-text)' }}>
             {initials(lead.full_name)}
           </span>
         </div>

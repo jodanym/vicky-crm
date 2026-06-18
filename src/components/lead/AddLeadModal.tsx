@@ -157,7 +157,8 @@ export default function AddLeadModal({ profile, onClose, onAdded }: Props) {
             <button
               type="submit"
               disabled={loading}
-              className="flex-1 py-2 px-4 bg-violet-600 hover:bg-violet-700 disabled:bg-violet-400 text-white rounded-lg text-sm font-medium transition-colors"
+              className="flex-1 py-2 px-4 text-white rounded-lg text-sm font-medium transition-all hover:opacity-90 disabled:opacity-60"
+              style={{ background: 'var(--brand)' }}
             >
               {loading ? 'Guardando…' : 'Crear lead'}
             </button>
