@@ -33,6 +33,14 @@
   }
 }
 
+.dark {
+  --background:    #0a0a0a;
+  --foreground:    #ededed;
+  --brand-light:   #2D1F5E;
+  --brand-faint:   #1A1030;
+  --brand-text:    #B49EFF;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);

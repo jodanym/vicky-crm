@@ -4,6 +4,7 @@ import { createClient } from '@/lib/supabase/client'
 import { useRouter, usePathname } from 'next/navigation'
 import type { Profile } from '@/types'
 import { LogOut, LayoutDashboard, BarChart3 } from 'lucide-react'
+import ThemeToggle from './ThemeToggle'
 
 interface NavbarProps {
   profile: Profile | null
@@ -69,6 +70,7 @@ export default function Navbar({ profile }: NavbarProps) {
 
       {/* User */}
       <div className="flex items-center gap-2">
+        <ThemeToggle />
         <div className="flex items-center gap-2">
           <div
             className="w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0"
